@@ -16,10 +16,25 @@ class Node:
 				return True
 		else:
 			if self.rightChild:
-				self.rightChild.insert(data)
+				return self.rightChild.insert(data)
 			else:
 				self.rightChild = Node(data)
-class Tree:
+				return True
+	
+	def find(self, data):
+		if self.value == data:
+			return True
+		elif data < self.value:
+			if self.leftChild:
+				return self.leftChild.find(data)
+			else:
+				return False
+		else:
+			if self.rightChild:
+				return self.rightChild.find(data)
+			else
+				return False
+class Tree:	
 
 	def __init__(self):
 		self.root = None
@@ -29,5 +44,13 @@ class Tree:
 			return self.root.insertNode(data)
 		else:
 			self.root = Node(data)
-			'''The node wass added hence return True'''
+			'''The node was added hence return True'''
 			return True
+			
+	def find(self, data):
+		# A root node was found to be existing
+		if self.root:
+			return self.root.find(data)
+		else:
+			#Quit as not root node was found
+			return False

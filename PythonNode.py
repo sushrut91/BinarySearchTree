@@ -32,10 +32,10 @@ class Node:
 		else:
 			if self.rightChild:
 				return self.rightChild.find(data)
-			else
+			else:
 				return False
 	
-	def preorder(self,data):
+	def preorder(self):
 		if self:
 			print (str(self.value))
 			if self.leftChild:
@@ -43,7 +43,7 @@ class Node:
 			if self.rightChild:
 				self.rightChild.preorder()
 	
-	def postorder(self,data):
+	def postorder(self):
 		if self:
 			if self.leftChild:
 				self.leftChild.postorder()
@@ -51,7 +51,7 @@ class Node:
 				self.rightChild.postorder()
 			print str(self.value)
 			
-	def inorder(self,data):
+	def inorder(self):
 		if self:
 			if self.leftChild:
 				self.leftChild.inorder()
@@ -64,7 +64,7 @@ class Tree:
 		self.root = None
 		
 	def insert(self,data):
-		if self.root == None:
+		if not self.root == None:
 			return self.root.insert(data)
 		else:
 			self.root = Node(data)
@@ -80,7 +80,6 @@ class Tree:
 			return False
 			
 	def preorder(self):
-		print preorder("Pre-Order")
 		self.root.preorder()
 		
 	def postorder(self):
@@ -88,4 +87,3 @@ class Tree:
 		
 	def inorder(self):
 		self.root.inorder()
-		

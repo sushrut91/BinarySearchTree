@@ -34,7 +34,31 @@ class Node:
 				return self.rightChild.find(data)
 			else
 				return False
-
+	
+	def preorder(self,data):
+		if self:
+			print (str(self.value))
+			if self.leftChild:
+				self.leftChild.preorder()
+			if self.rightChild:
+				self.rightChild.preorder()
+	
+	def postorder(self,data):
+		if self:
+			if self.leftChild:
+				self.leftChild.postorder()
+			if self.rightChild:
+				self.rightChild.postorder()
+			print str(self.value)
+			
+	def inorder(self,data):
+		if self:
+			if self.leftChild:
+				self.leftChild.inorder()
+			print str(self.value)
+			if self.rightChild:
+				self.rightChild.inorder()
+				
 class Tree:	
 	def __init__(self):
 		self.root = None
@@ -54,3 +78,14 @@ class Tree:
 		else:
 			#Quit as not root node was found
 			return False
+			
+	def preorder(self):
+		print preorder("Pre-Order")
+		self.root.preorder()
+		
+	def postorder(self):
+		self.root.postorder()
+		
+	def inorder(self):
+		self.root.inorder()
+		

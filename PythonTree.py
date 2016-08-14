@@ -1,10 +1,9 @@
-from PythonNode import BinaryTree
+from PythonNode import Node
+from PythonNode import Tree
 
 def main():
-    bt = BinaryTree()
-    bt.insertNode(5)
-    print bt.right
-    print bt.left
+    bst = Tree()
+    bst.insert(10)
 
 if __name__ == '__main__':
     main()

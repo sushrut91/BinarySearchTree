@@ -10,7 +10,7 @@ class Node:
 		elif data < self.value:
 			#Check if there is a left child already present
 			if self.leftChild:
-				return self.left.insert(data)
+				return self.leftChild.insert(data)
 			else:
 				self.leftChild = Node(data)
 				return True
@@ -34,14 +34,14 @@ class Node:
 				return self.rightChild.find(data)
 			else
 				return False
-class Tree:	
 
+class Tree:	
 	def __init__(self):
 		self.root = None
 		
 	def insert(self,data):
 		if self.root == None:
-			return self.root.insertNode(data)
+			return self.root.insert(data)
 		else:
 			self.root = Node(data)
 			'''The node was added hence return True'''
